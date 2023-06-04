@@ -84,4 +84,9 @@ background: rgba(255, 255, 255, 0);
 color: #e7274a;
 border: 1px solid #e72727;
 }
+.order .delete:hover {
+background: #e72727;
+color: #fff;
+}
+
 </style>
