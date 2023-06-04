@@ -31,5 +31,16 @@ import { ref } from 'vue'
     background: #fff;
     
 }
+/* center order img */
+.order img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+
 
 </style>
