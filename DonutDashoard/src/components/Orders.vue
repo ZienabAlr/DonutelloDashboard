@@ -58,5 +58,10 @@ import { ref } from 'vue'
     font-weight: 200;
 
 }
+.order .status {
+    font-weight: 700;
+}
+
+
 
 </style>
