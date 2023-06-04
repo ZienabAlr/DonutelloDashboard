@@ -75,6 +75,9 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 background: #E72770;
 color: #fff;
 }
-
+.order .details:hover {
+background: #e72771ae;
+color: #fff;
+}
 
 </style>
