@@ -51,5 +51,12 @@ import { ref } from 'vue'
 .order p {
     margin: 1rem;  
 }
+.order .client {
+    font-size: 1rem;
+    color: rgb(143, 143, 143);
+    text-align: center;
+    font-weight: 200;
+
+}
 
 </style>
