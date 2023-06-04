@@ -3,9 +3,16 @@ import { onMounted, ref, reactive } from 'vue'
 
 let orders = reactive({data: []}); 
 
-// let donutname = ref('');
-// let company = ref('');
-// let status = ref('');
+onMounted(()=>{
+    const url = 'http://localhost:3000/api/v1/donutello';
+
+    fetch(url)
+    .then((respons) => respons.json())
+    .then((data) => {
+        orders.data = data;
+        console.log(data);
+    })
+})
 
 </script>
 
