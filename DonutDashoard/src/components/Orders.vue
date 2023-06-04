@@ -9,7 +9,7 @@ onMounted(()=>{
     fetch(url)
     .then((respons) => respons.json())
     .then((data) => {
-        orders.data = data;
+        orders.data = data.data.donuts;
         console.log(data);
     })
 })
@@ -18,11 +18,11 @@ onMounted(()=>{
 
 <template>
 
-<div class="order">
+<div v-for="item in orders.data" :key="item" class="order" >
     <img src="../assets/donutTestimg.jpeg" alt="">
-    <h3>Donut name</h3>
-    <p class="client"> Client name</p>
-    <p class="status">status: </p>
+    <h3>{{item.donutname}}</h3>
+    <p class="client"> {{ item.company }}</p>
+    <p class="status">status:{{ item.status }} </p>
     <!-- detail button  -->
     <button class=" details">Details</button>
     <!-- delete button  -->
