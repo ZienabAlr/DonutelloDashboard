@@ -62,6 +62,15 @@ import { ref } from 'vue'
     font-weight: 700;
 }
 
+.order button {
+display: inline-block;
+margin: 0.5rem 0.75rem;
+padding:  0.75rem 1rem;
+border: none;
+border-radius: 0.25rem;
+font-size: 14px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 
 </style>
