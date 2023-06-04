@@ -4,6 +4,7 @@ import Orders from './components/Orders.vue'
 
 <template>
   
+  <Orders />
 </template>
 
 <style scoped>
