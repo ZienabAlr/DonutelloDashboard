@@ -48,4 +48,8 @@ import { ref } from 'vue'
     color: #333;
 }
 
+.order p {
+    margin: 1rem;  
+}
+
 </style>
