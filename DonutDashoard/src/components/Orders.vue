@@ -92,12 +92,12 @@ const getOneOrder = (id) => {
         <h2>{{donutname}}</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
-            <p>Bedrijfsnaam: {{company}}</p>
-            <p>E-mail: {{email}}</p>
-            <p>Gsm nummer: {{phone}}</p>
-            <p>Glazuur: {{glaze}}</p>
-            <p>Aantal: {{amount}}</p>
-            <p>Status: {{status}}</p>
+            <p>Bedrijfsnaam: <span>{{company}}</span></p>
+            <p>E-mail: <span>{{email}}</span></p>
+            <p>Gsm nummer: <span>{{phone}}</span> </p>
+            <p>Glazuur: <span>{{glaze}}</span></p>
+            <p>Aantal: <span> {{amount}}</span></p>
+            <p>Status: <span>{{status}}</span></p>
         </div>
     </div>
 </div>
