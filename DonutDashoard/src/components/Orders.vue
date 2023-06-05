@@ -57,11 +57,16 @@ const getOneOrder = (id) => {
         amount.value = order.amount;
         status.value = order.status;
 
+        // show the pop up card
+        window.location.href = "#popup1";
+
     })
     .catch((error) => {
         console.log(error);
 
     })
+
+
 }
 
 </script>
