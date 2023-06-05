@@ -78,9 +78,7 @@ const getOneOrder = (id) => {
     <h3>{{item.donutname}}</h3>
     <p class="client"> {{ item.company }}</p>
     <p class="status">status: <span>{{item.status }} </span></p>
-    <!-- detail button prevent the selected item  -->
     <button class=" details" @click.prevent="getOneOrder(item._id)">Details</button>
-    <!-- delete button  -->
     <button class="delete" @click.prevent="deleteOrder(item._id)">Delete</button>
   
 </div>
@@ -103,7 +101,6 @@ const getOneOrder = (id) => {
                 <option>To Do</option>
                 <option>In verwerking</option>
                 <option>Klaar</option>
-
             </select>
           </p>
         </div>
@@ -240,6 +237,12 @@ color: #fff;
 }
 .content p span {
     font-weight: 200;
+}
+.content p select {
+    padding:  0.5rem 0;
+    border: 1px solid #1eb121;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
 }
 
 </style>
