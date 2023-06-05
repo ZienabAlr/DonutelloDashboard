@@ -145,7 +145,9 @@ const getOneOrder = (id) => {
 .order .status {
     font-weight: 700;
 }
-
+.order .status span {
+    color: #e72727;
+}
 .order button {
 display: inline-block;
 margin: 0.5rem 0.75rem;
