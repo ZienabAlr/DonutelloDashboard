@@ -104,7 +104,7 @@ const getOneOrder = (id) => {
             </select>
           </p>
         </div>
-        <button class="details">Update</button>
+        <button class="details update">Update</button>
     </div>
 </div>
 </template>
@@ -163,11 +163,11 @@ border-radius: 0.25rem;
 font-size: 14px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.order .details {
+.details {
 background: #E72770;
 color: #fff;
 }
-.order .details:hover {
+.details:hover {
 background: #e72771ae;
 color: #fff;
 }
@@ -245,4 +245,14 @@ color: #fff;
     margin: 0.5rem 0;
 }
 
+.update {
+   border: none;
+    border-radius: 0.25rem;
+    padding: 0.85rem 1rem;
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+    margin: 0.5rem 1rem;
+
+}
 </style>
