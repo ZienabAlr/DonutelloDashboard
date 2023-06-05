@@ -123,7 +123,7 @@ const updateOrder = (id) => {
             </select>
           </p>
         </div>
-        <button class="details update">Update</button>
+        <button class="details update" @click.prevent="updateOrder(item._id)">Update</button>
     </div>
 </div>
 </template>
