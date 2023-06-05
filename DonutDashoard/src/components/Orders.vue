@@ -23,6 +23,8 @@ const deleteOrder = (id) => {
     .then((respons) => respons.json())
     .then((data) => {
         console.log(data);
+         orders.data = data.data.donuts[this.id];
+
     })
     .catch((error) => {
         console.log(error);
