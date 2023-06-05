@@ -48,7 +48,15 @@ const getOneOrder = (id) => {
     .then((response) => response.json())
     .then((data) => {
         const order = data.data.donut;
-        console.log(order);        
+        console.log(order);  
+        company.value = order.company;
+        email.value = order.email;
+        phone.value = order.phone;
+        donutname.value = order.donutname;
+        glaze.value = order.glaze;
+        amount.value = order.amount;
+        status.value = order.status;
+        
     })
     .catch((error) => {
         console.log(error);
