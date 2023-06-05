@@ -89,13 +89,12 @@ const getOneOrder = (id) => {
 
 <div id="popup1" class="overlay">
     <div class="popup">
-        <h2>Order Details</h2>
+        <h2>{{donutname}}</h2>
         <a class="close" href="#">&times;</a>
         <div class="content">
             <p>Company: {{company}}</p>
             <p>Email: {{email}}</p>
             <p>Phone: {{phone}}</p>
-            <p>Donut Name: {{donutname}}</p>
             <p>Glaze: {{glaze}}</p>
             <p>Amount: {{amount}}</p>
             <p>Status: {{status}}</p>
