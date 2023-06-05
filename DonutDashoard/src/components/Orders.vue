@@ -97,8 +97,17 @@ const getOneOrder = (id) => {
             <p>Gsm nummer: <span>{{phone}}</span> </p>
             <p>Glazuur: <span>{{glaze}}</span></p>
             <p>Aantal: <span> {{amount}}</span></p>
-            <p>Status: <span>{{status}}</span></p>
+            <p>Status: 
+                <select v-model="status">
+                <option disabled value="">{{status}}</option>
+                <option>To Do</option>
+                <option>In verwerking</option>
+                <option>Klaar</option>
+
+            </select>
+          </p>
         </div>
+        <button class="details">Update</button>
     </div>
 </div>
 </template>
@@ -225,7 +234,7 @@ color: #fff;
 }
 .content p {
     font-size: 1rem;
-    margin: 0.5rem 0;
+    margin: 0.5rem 1rem;
     color: #333;
     font-weight: 700;
 }
