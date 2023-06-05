@@ -77,7 +77,7 @@ const getOneOrder = (id) => {
     <img src="../assets/donutTestimg.jpeg" alt="">
     <h3>{{item.donutname}}</h3>
     <p class="client"> {{ item.company }}</p>
-    <p class="status">status: {{item.status }} </p>
+    <p class="status">status: <span>{{item.status }} </span></p>
     <!-- detail button prevent the selected item  -->
     <button class=" details" @click.prevent="getOneOrder(item._id)">Details</button>
     <!-- delete button  -->
