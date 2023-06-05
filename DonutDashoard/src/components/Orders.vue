@@ -32,8 +32,6 @@ const deleteOrder = (id) => {
         // get the index of the item
         const index = data.data.donut._id;
         console.log(index);
-
-        // remove the item from the array
         orders.data.splice(index, 1);
 
     })
@@ -67,6 +65,27 @@ const getOneOrder = (id) => {
     })
 
 
+}
+
+// update order function
+const updateOrder = (id) => {
+    const url = `http://localhost:3000/api/v1/donutello/${id}`;
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            status: status.value
+        })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 }
 
 </script>
