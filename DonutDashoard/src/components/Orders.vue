@@ -223,5 +223,14 @@ color: #fff;
   max-height: 30%;
   overflow: auto;
 }
+.content p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #333;
+    font-weight: 700;
+}
+.content p span {
+    font-weight: 200;
+}
 
 </style>
