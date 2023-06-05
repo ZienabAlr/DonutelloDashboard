@@ -201,8 +201,8 @@ color: #fff;
 
 .popup h2 {
   margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+  color: #E72770;
+  text-align: center;
 }
 .popup .close {
   position: absolute;
