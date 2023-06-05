@@ -2,7 +2,13 @@
 import { onMounted, ref, reactive } from 'vue'
 
 let orders = reactive({data: []}); 
-
+let company = ref('');
+let email = ref('');
+let phone = ref('');
+let donutname = ref('');
+let glaze = ref('');
+let amount = ref('');
+let status = ref('');
 onMounted(()=>{
     const url = 'http://localhost:3000/api/v1/donutello';
 
