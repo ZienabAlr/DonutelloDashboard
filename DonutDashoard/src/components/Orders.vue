@@ -10,20 +10,25 @@ onMounted(()=>{
     .then((respons) => respons.json())
     .then((data) => {
         orders.data = data.data.donuts;
-        // console.log(data);
+       
     })
 })
 
-// delete one order
+// delete order function
 const deleteOrder = (id) => {
     const url = `http://localhost:3000/api/v1/donutello/${id}`;
     fetch(url, {
         method: 'DELETE',
+
     })
-    .then((respons) => respons.json())
+    .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-         orders.data = data.data.donuts[this.id];
+    //  // get the index of the item
+        const index = data.data.donut._id;
+        console.log(index);
+
+    //     // remove the item from the array
+        orders.data.splice(index, 1);
 
     })
     .catch((error) => {
@@ -39,13 +44,14 @@ const deleteOrder = (id) => {
     <h3>{{item.donutname}}</h3>
     <p class="client"> {{ item.company }}</p>
     <p class="status">status: {{item.status }} </p>
-    <!-- detail button  -->
+    <!-- detail button prevent the selected item  -->
     <button class=" details">Details</button>
     <!-- delete button  -->
-    <button class="delete" @click.prevent="deleteOrder">Delete</button>
+    <button class="delete" @click.prevent="deleteOrder(item._id)">Delete</button>
   
 </div>
 
+<!-- make a pop up card with information of one order -->
 </template>
 
 <style scoped>
@@ -118,7 +124,7 @@ background: #e72727;
 color: #fff;
 }
 
-/* .overlay {
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -128,8 +134,8 @@ color: #fff;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-} */
-/* .overlay:target {
+}
+.overlay:target {
   visibility: visible;
   opacity: 1;
 }
@@ -165,6 +171,6 @@ color: #fff;
 .popup .content {
   max-height: 30%;
   overflow: auto;
-} */
+}
 
 </style>
