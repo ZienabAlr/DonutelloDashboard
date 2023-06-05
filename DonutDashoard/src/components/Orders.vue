@@ -23,11 +23,11 @@ const deleteOrder = (id) => {
     })
     .then((response) => response.json())
     .then((data) => {
-    //  // get the index of the item
+        // get the index of the item
         const index = data.data.donut._id;
         console.log(index);
 
-    //     // remove the item from the array
+        // remove the item from the array
         orders.data.splice(index, 1);
 
     })
@@ -35,6 +35,21 @@ const deleteOrder = (id) => {
         console.log(error);
     })
 }
+
+const getOneOrder = (id) => {
+    const url = `http://localhost:3000/api/v1/donutello/${id}`;
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+        const order = data.data.donut;
+        console.log(order);        
+    })
+    .catch((error) => {
+        console.log(error);
+
+    })
+}
+
 </script>
 
 <template>
@@ -45,7 +60,7 @@ const deleteOrder = (id) => {
     <p class="client"> {{ item.company }}</p>
     <p class="status">status: {{item.status }} </p>
     <!-- detail button prevent the selected item  -->
-    <button class=" details">Details</button>
+    <button class=" details" @click.prevent="getOneOrder(item._id)">Details</button>
     <!-- delete button  -->
     <button class="delete" @click.prevent="deleteOrder(item._id)">Delete</button>
   
