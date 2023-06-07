@@ -58,6 +58,43 @@ const getOneOrder = (id) => {
     })
 }
 
+// update order function
+
+const updateOrder = (id) => {
+    const url = `http://localhost:3000/api/v1/donutello/${id}`;
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            company: company.value,
+            email: email.value,
+            phone: phone.value,
+            donutname: donutname.value,
+            glaze: glaze.value,
+            amount: amount.value,
+            status: status.value,
+        }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        const order = data.data.donut;
+        company.value = order.company;
+        email.value = order.email;
+        phone.value = order.phone;
+        donutname.value = order.donutname;
+        glaze.value = order.glaze;
+        amount.value = order.amount;
+        status.value = order.status;
+
+        // show the pop up card
+        window.location.href = "#popup1";
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+}
 </script>
 
 <template>
