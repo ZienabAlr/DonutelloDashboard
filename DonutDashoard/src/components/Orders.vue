@@ -63,7 +63,7 @@ const getOneOrder = (id) => {
 const updateOrder = (id) => {
     const url = `http://localhost:3000/api/v1/donutello/${id}`;
     fetch(url, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
