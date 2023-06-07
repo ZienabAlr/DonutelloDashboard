@@ -68,24 +68,13 @@ const updateOrder = (id) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            company: company.value,
-            email: email.value,
-            phone: phone.value,
-            donutname: donutname.value,
-            glaze: glaze.value,
-            amount: amount.value,
+            
             status: status.value,
         }),
     })
     .then((response) => response.json())
     .then((data) => {
-        const order = data.data.donut;
-        company.value = order.company;
-        email.value = order.email;
-        phone.value = order.phone;
-        donutname.value = order.donutname;
-        glaze.value = order.glaze;
-        amount.value = order.amount;
+        
         status.value = order.status;
 
         // show the pop up card
