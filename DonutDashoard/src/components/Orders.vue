@@ -30,7 +30,10 @@ const deleteOrder = (id) => {
     .then((data) => {
         // get the index of the item
         const index = data.data.donut._id;
-        orders.data.splice(index, 1);
+        const index2 = orders.data.findIndex(order => order._id === id);
+        // remove the item from the array
+        orders.data.splice(index2, 1);
+
     })
     .catch((error) => {
         console.log(error);
