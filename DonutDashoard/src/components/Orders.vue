@@ -61,16 +61,16 @@ const getOneOrder = (id) => {
 // update order function
 
 const updateOrder = (id) => {
+    const update = {
+        status: status.value
+    }
     const url = `http://localhost:3000/api/v1/donutello/${id}`;
     fetch(url, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            
-            status: status.value,
-        }),
+        body: JSON.stringify(update),
     })
     .then((response) => response.json())
     .then((data) => {
