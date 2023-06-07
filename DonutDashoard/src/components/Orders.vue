@@ -78,8 +78,8 @@ const updateOrder = (id) => {
         data.data.donut.status = status.value;
         const index = orders.data.findIndex(order => order._id === id);
         orders.data[index].status = status.value;
-        // show the pop up card
-        window.location.href = "#popup1";
+        // close the pop up card
+        window.location.href = "#";
     })
     .catch((error) => {
         console.log(error);
