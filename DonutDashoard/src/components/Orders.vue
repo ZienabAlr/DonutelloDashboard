@@ -16,7 +16,6 @@ onMounted(()=>{
     .then((respons) => respons.json())
     .then((data) => {
         orders.data = data.data.donuts;
-       
     })
 })
 
@@ -25,15 +24,12 @@ const deleteOrder = (id) => {
     const url = `http://localhost:3000/api/v1/donutello/${id}`;
     fetch(url, {
         method: 'DELETE',
-
     })
     .then((response) => response.json())
     .then((data) => {
         // get the index of the item
         const index = data.data.donut._id;
-        console.log(index);
         orders.data.splice(index, 1);
-
     })
     .catch((error) => {
         console.log(error);
@@ -46,7 +42,6 @@ const getOneOrder = (id) => {
     .then((response) => response.json())
     .then((data) => {
         const order = data.data.donut;
-        console.log(order);  
         company.value = order.company;
         email.value = order.email;
         phone.value = order.phone;
@@ -57,31 +52,6 @@ const getOneOrder = (id) => {
 
         // show the pop up card
         window.location.href = "#popup1";
-
-    })
-    .catch((error) => {
-        console.log(error);
-
-    })
-
-
-}
-
-// update order function
-const updateOrder = (id) => {
-    const url = `http://localhost:3000/api/v1/donutello/${id}`;
-    fetch(url, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            status: status.value
-        })
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
     })
     .catch((error) => {
         console.log(error);
@@ -99,12 +69,10 @@ const updateOrder = (id) => {
     <p class="status">status: <span>{{item.status }} </span></p>
     <button class=" details" @click.prevent="getOneOrder(item._id)">Details</button>
     <button class="delete" @click.prevent="deleteOrder(item._id)">Delete</button>
-  
 </div>
 
 <!-- make a pop up card with information of one order -->
-
-<div id="popup1" class="overlay">
+    <div id="popup1" class="overlay">
     <div class="popup">
         <h2>{{donutname}}</h2>
         <a class="close" href="#">&times;</a>
@@ -116,14 +84,14 @@ const updateOrder = (id) => {
             <p>Aantal: <span> {{amount}}</span></p>
             <p>Status: 
                 <select v-model="status">
-                <option disabled value="">{{status}}</option>
-                <option>To Do</option>
-                <option>In verwerking</option>
-                <option>Klaar</option>
-            </select>
-          </p>
+                    <option disabled value=""></option>
+                    <option>To Do</option>
+                    <option>In verwerking</option>
+                    <option>Klaar</option>
+                </select>
+            </p>
         </div>
-        <button class="details update" @click.prevent="updateOrder(item._id)">Update</button>
+        <button class="details update" @click.prevent="updateOrder(orderId)">Update</button>
     </div>
 </div>
 </template>
