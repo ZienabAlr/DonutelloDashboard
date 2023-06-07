@@ -75,7 +75,7 @@ const updateOrder = (id) => {
     .then((response) => response.json())
     .then((data) => {
         
-        status.value = order.status;
+        data.data.donut.status = status.value;
 
         // show the pop up card
         window.location.href = "#popup1";
