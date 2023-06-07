@@ -43,6 +43,7 @@ const getOneOrder = (id) => {
     .then((response) => response.json())
     .then((data) => {
         const order = data.data.donut;
+        orderId = order._id;
         company.value = order.company;
         email.value = order.email;
         phone.value = order.phone;
@@ -119,7 +120,7 @@ const updateOrder = (id) => {
                 </select>
             </p>
         </div>
-        <button class="details update" @click.prevent="updateOrder(orderId)">Update</button>
+        <button class="details update" @click.prevent="updateOrder( orderId)">Update</button>
     </div>
 </div>
 </template>
