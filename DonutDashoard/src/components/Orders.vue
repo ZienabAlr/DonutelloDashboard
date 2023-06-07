@@ -2,6 +2,7 @@
 import { onMounted, ref, reactive } from 'vue'
 
 let orders = reactive({data: []}); 
+let orderId;
 let company = ref('');
 let email = ref('');
 let phone = ref('');
